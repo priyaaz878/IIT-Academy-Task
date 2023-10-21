@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import '../App.css';
 
 function Login() {
+
   useEffect(() => {
     var CLASSES = {
       button: 'btn',
@@ -162,6 +163,7 @@ function Login() {
           </button>
         </div>
         <div className="card__action">
+   
           <button
             className="btn btn--secondry btn--block"
             data-toggle="form"

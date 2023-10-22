@@ -1,13 +1,20 @@
+// src/App.js
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-//import Studentloginbutton from './components/Studentloginbutton';
-import Login from './components/Login';
+import "../src/App.css";
+
+import TeacherLogin from './components/TeacherLogin';
+import StudentLogin from './components/StudentLogin';
 
 function App() {
   return (
-   <div>
-    <Login/>
-   </div>
+    <div className="login-container">
+    <div className="student-login">
+      <StudentLogin />
+    </div>
+    <div className="teacher-login">
+      <TeacherLogin />
+    </div>
+  </div>
   );
 }
 

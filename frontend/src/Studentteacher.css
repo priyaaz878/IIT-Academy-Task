@@ -10,6 +10,9 @@
  
   
 }
+body{
+  background-color: #fff;
+}
 .form {
   position: relative;
   z-index: 1;

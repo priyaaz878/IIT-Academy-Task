@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../Studentteacher.css';
+import { handleForgotPasswordClick } from './authUtils'; // Import the utility function
 
 
 const StudentLogin = () => {
@@ -8,11 +9,19 @@ const StudentLogin = () => {
     name: '',
     email: '',
     password: '',
+    phone: '', // Add phone field
+    address: '', // Add address field
   });
 
   const toggleView = () => {
     setIsLogin(!isLogin);
-    setFormData({ name: '', email: '', password: '' }); // Clear the form
+    setFormData({
+      name: '',
+      email: '',
+      password: '',
+      phone: '', // Clear phone field
+      address: '', // Clear address field
+    });
   };
 
   const handleInputChange = (e) => {
@@ -37,50 +46,70 @@ const StudentLogin = () => {
 
   return (
     <div className="login-page">
-    <div className="form">
-   
-
-      
-      <h1>{isLogin ? 'Student Login' : 'Student Signup'}</h1>
-      <form onSubmit={handleSubmit}>
-        {!isLogin && (
+      <div className="form">
+        <h1>{isLogin ? 'Student Login' : 'Student Signup'}</h1>
+        <form onSubmit={handleSubmit}>
+          {!isLogin && (
+            <input
+              type="text"
+              name="name"
+              placeholder="Name"
+              value={formData.name}
+              onChange={handleInputChange}
+            />
+          )}
           <input
-            type="text"
-            name="name"
-            placeholder="Name"
-            value={formData.name}
+            type="email"
+            name="email"
+            placeholder="Email"
+            value={formData.email}
             onChange={handleInputChange}
           />
-        )}
-        <input
-          type="email"
-          name="email"
-          placeholder="Email"
-          value={formData.email}
-          onChange={handleInputChange}
-        />
-        <input
-          type="password"
-          name="password"
-          placeholder="Password"
-          value={formData.password}
-          onChange={handleInputChange}
-        />
-        <button className="bubbly-button" type="submit">
-          {isLogin ? 'Login' : 'Sign Up'}
-        </button>
-      </form>
-      <p onClick={toggleView}>
-        {isLogin
-          ? 'Don’t have an account? Sign up here.'
-          : 'Already have an account? Log in here.'}
-      </p>
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            value={formData.password}
+            onChange={handleInputChange}
+          />
+          {!isLogin && (
+            <input
+              type="text"
+              name="phone"
+              placeholder="Enter your Phone Number" // Phone input
+              value={formData.phone}
+              onChange={handleInputChange}
+            />
+          )}
+          {!isLogin && (
+            <input
+              type="text"
+              name="address"
+              placeholder="Enter your Address" // Address input
+              value={formData.address}
+              onChange={handleInputChange}
+            />
+          )}
+          <button className="bubbly-button" type="submit">
+            {isLogin ? 'Login' : 'Sign Up'}
+          </button>
+        </form>
+        <p onClick={toggleView}>
+          {isLogin
+            ? 'Don’t have an account? Sign up here.'
+            : 'Already have an account? Log in here.'}
+        </p>
+        <p>
+          <a
+            href="#"
+            onClick={handleForgotPasswordClick}
+            className="forgot-password-link"
+          >
+            Forgot Password?
+          </a>
+        </p>
+      </div>
     </div>
-    </div>
-    
-
-   
-
   );
 };
 

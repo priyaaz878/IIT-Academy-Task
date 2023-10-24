@@ -9,8 +9,8 @@ const StudentLogin = () => {
     name: '',
     email: '',
     password: '',
-    phone: '', // Add phone field
-    address: '', // Add address field
+    phone: '',
+    address: '', 
   });
 
   const toggleView = () => {
@@ -19,8 +19,8 @@ const StudentLogin = () => {
       name: '',
       email: '',
       password: '',
-      phone: '', // Clear phone field
-      address: '', // Clear address field
+      phone: '', 
+      address: '',
     });
   };
 
@@ -34,7 +34,7 @@ const StudentLogin = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Add your signup or login logic here based on the isLogin state
+ 
     if (isLogin) {
       // Login logic
       console.log('Login Form Data:', formData);

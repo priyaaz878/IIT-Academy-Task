@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
 import '../Studentteacher.css';
-import { handleForgotPasswordClick } from './authUtils'; // Import the utility function
+import { handleForgotPasswordClick } from './authUtils'; 
 
 
 const TeacherLogin = () => {
-  const [isLogin, setIsLogin] = useState(true); // Default to the login view
+  const [isLogin, setIsLogin] = useState(true); 
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     password: '',
-    phone: '', // Add phone field
-    address: '', // Add address field
+    phone: '', 
+    address: '', 
   });
 
   const toggleView = () => {
@@ -19,8 +19,8 @@ const TeacherLogin = () => {
       name: '',
       email: '',
       password: '',
-      phone: '', // Clear phone field
-      address: '', // Clear address field
+      phone: '',
+      address: '', 
     });
   };
 
@@ -34,7 +34,7 @@ const TeacherLogin = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Add your signup or login logic here based on the isLogin state
+   
     if (isLogin) {
       // Login logic
       console.log('Login Form Data:', formData);

@@ -101,7 +101,7 @@ const StudentLogin = () => {
         </p>
         <p>
           <a
-            href="#"
+            href="/ForgotPassword"
             onClick={handleForgotPasswordClick}
             className="forgot-password-link"
           >

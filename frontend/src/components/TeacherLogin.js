@@ -34,7 +34,7 @@ const TeacherLogin = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-   
+    // Add your signup or login logic here based on the isLogin state
     if (isLogin) {
       // Login logic
       console.log('Login Form Data:', formData);
@@ -100,13 +100,15 @@ const TeacherLogin = () => {
             : 'Already have an account? Log in here.'}
         </p>
         <p>
-          <a
-            href="#"
-            onClick={handleForgotPasswordClick}
-            className="forgot-password-link"
-          >
-            Forgot Password?
-          </a>
+        <a
+  href="/ForgotPassword"
+  onClick={handleForgotPasswordClick}
+  className="forgot-password-link"
+>
+  Forgot Password?
+</a>
+
+
         </p>
       </div>
     </div>
